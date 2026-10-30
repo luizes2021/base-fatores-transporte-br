@@ -1,0 +1,40 @@
+# Como citar esta base. O GitHub le este arquivo e mostra um botao "Cite this
+# repository"; gerenciadores de referencia o importam direto.
+#
+# DEPOIS DO PRIMEIRO RELEASE, preencha o DOI em 'identifiers' (o Zenodo o
+# gera automaticamente) e descomente aquele bloco.
+#
+# Opcionais: 'email' para contato publico, e co-autores — a ordem aqui e a
+# ordem na citacao.
+cff-version: 1.2.0
+message: "Se usar esta base, cite-a conforme abaixo."
+type: dataset
+title: "Base nacional de fatores operacionais e ambientais do transporte rodoviário de cargas (Brasil)"
+abstract: >-
+  Base de fatores por categoria de veículo de carga para o Brasil, construída
+  por integração de fontes públicas (SENATRAN, ANP, ANTT) com incerteza
+  quantificada e calibração contra o total de diesel comercializado. Inclui
+  composição da frota por classe canônica, desagregação por número de eixos e
+  modelo de acoplamento para conjuntos articulados. Código e tabelas de
+  correspondência abertos e versionados.
+authors:
+  - family-names: "Simão"
+    given-names: "Luiz Eduardo"
+    affiliation: "Universidade do Vale do Itajaí (UNIVALI), PMPGIL"
+    orcid: "https://orcid.org/0000-0002-6526-9348"
+keywords:
+  - transporte rodoviário de cargas
+  - emissões de GEE
+  - fatores de emissão
+  - frota de veículos
+  - logística sustentável
+  - Brasil
+  - ISO 14083
+license: CC-BY-4.0
+version: "0.1.0"
+date-released: "2026-10-30"
+repository-code: "https://github.com/luizes2021/base-fatores-transporte-br"
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.XXXXXXX"
+#     description: "DOI de conceito — sempre aponta para a versão mais recente"

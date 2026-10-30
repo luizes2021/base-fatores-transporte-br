@@ -1,0 +1,9 @@
+id_classe,classe_nome,ordem,eixos_total,pbt_cmt_t,tara_t,carga_util_t,fonte_carga_util,status
+VUC,VUC / leve,1,2,10.0,4.0,6.0,"referencia de especialista — SUBSTITUIR por catalogo de fabricante",PENDENTE
+TOCO,Toco,2,2,16.0,6.0,10.0,idem,PENDENTE
+TRUCK,Truck,3,3,23.0,9.0,14.0,idem,PENDENTE
+BITRUCK,Bitruck,4,4,29.0,11.0,18.0,idem,PENDENTE
+CARRETA5,Carreta 5 eixos,5,5,41.5,14.5,27.0,idem,PENDENTE
+CARRETA6,Carreta 6 eixos / vanderleia,6,6,48.5,16.5,32.0,idem,PENDENTE
+BITREM,Bitrem 7 eixos,7,7,57.0,20.0,37.0,idem,PENDENTE
+RODOTREM,Rodotrem 9 eixos,8,9,74.0,24.0,50.0,idem,PENDENTE

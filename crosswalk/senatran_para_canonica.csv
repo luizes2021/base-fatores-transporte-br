@@ -1,0 +1,8 @@
+tipo_senatran,id_classe,classe_nome,n_eixos,pbt_ref_t,tipo_mapeamento,parcela,fonte_parcela,status,nota
+CAMINHAO,VUC,VUC / leve,2,10,PARCELA,,sindipecas_circulante,PENDENTE,SENATRAN nao informa PBT — parcela precisa vir de fonte externa
+CAMINHAO,TOCO,Toco,2,16,PARCELA,,sindipecas_circulante,PENDENTE,idem
+CAMINHAO,TRUCK,Truck,3,23,PARCELA,,sindipecas_circulante,PENDENTE,idem
+CAMINHAO,BITRUCK,Bitruck,4,29,PARCELA,,sindipecas_circulante,PENDENTE,idem
+CAMINHAO TRATOR,__UNIDADE_TRATORA,Unidade tratora (nao e classe final),,,ACOPLAMENTO,1.0,,OK,entra no modelo de acoplamento — nunca vira conjunto sozinha
+SEMI-REBOQUE,__UNIDADE_REBOCADA,Unidade rebocada (nao e classe final),,,ACOPLAMENTO,1.0,,OK,idem
+REBOQUE,__UNIDADE_REBOCADA,Unidade rebocada (nao e classe final),,,ACOPLAMENTO,1.0,,OK,usado em bitrem/rodotrem

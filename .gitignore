@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------------------
+# O que NAO vai para o Git, e por que.
+#
+# Regra geral: versiona-se o que foi ESCRITO A MAO (codigo, crosswalk, docs) e
+# o que sera PUBLICADO (30_publicados). O que e derivavel rodando o pipeline
+# fica de fora — se nao for reproduzivel a partir do que esta aqui, ha um bug.
+# ---------------------------------------------------------------------------
+
+# Arquivos originais das fontes: grandes, e redistribui-los pode esbarrar na
+# licenca do orgao. O MANIFESTO (URL + data + hash) e o que permite a outra
+# pessoa baixar exatamente os mesmos arquivos.
+dados/00_brutos/*
+!dados/00_brutos/MANIFESTO.csv
+!dados/00_brutos/.gitkeep
+
+# Camadas intermediarias: derivaveis rodando o pipeline.
+dados/10_extraidos/*
+!dados/10_extraidos/.gitkeep
+dados/20_harmonizados/*
+!dados/20_harmonizados/.gitkeep
+
+# A camada publicada VAI para o Git: e ela que recebe o DOI.
+# (nenhuma regra de exclusao para dados/30_publicados/)
+
+# Fixtures sinteticas: geradas pelos scripts em codigo/_teste/.
+codigo/_teste/*.csv
+codigo/_teste/*.xlsx
+
+# Ambiente e cache
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# O lock do ambiente VAI para o Git — e ele que torna a versao reproduzivel.
+# (requirements.lock.txt e environment.lock.yml nao sao ignorados)

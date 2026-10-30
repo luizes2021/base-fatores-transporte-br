@@ -1,0 +1,26 @@
+# Ambiente reproduzivel do projeto.
+#   conda env create -f environment.yml
+#   conda activate base-fatores
+#
+# Para publicar a versao exata que gerou a base (vai no Zenodo junto com o DOI):
+#   conda env export --no-builds > environment.lock.yml
+#
+# Se o solver reclamar de algum pacote, 'python-duckdb', 'duckdb' e 'matplotlib'
+# sao opcionais nesta fase — remova e siga. Os extratores precisam apenas de
+# pandas, pyarrow e openpyxl.
+name: base-fatores
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas>=2.0
+  - numpy>=1.24
+  - pyarrow>=14          # escreve os Parquet; sem ele os scripts falham no fim
+  - openpyxl>=3.1        # le os .xlsx
+  - xlrd>=2.0            # le os .xls do SENATRAN
+  - python-duckdb>=0.10  # SQL sobre Parquet, sem servidor
+  - duckdb>=0.10         # CLI, para consulta rapida fora do Python
+  - pdfplumber>=0.11     # extracao das tabelas de CETESB, Sindipecas e CNT
+  - jupyterlab
+  - matplotlib
+  - pip

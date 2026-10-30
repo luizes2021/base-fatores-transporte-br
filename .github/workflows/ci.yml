@@ -1,0 +1,71 @@
+name: pipeline
+
+# Roda o pipeline sobre os arquivos sinteticos.
+# NAO testa os dados reais — testa se o CODIGO ainda roda.
+#
+# O agendamento mensal e o ponto: quando pandas, pyarrow ou openpyxl mudarem
+# de API, voce recebe um e-mail do GitHub naquele mes — nao em abril, na
+# vespera de publicar a versao do ano, com o pipeline quebrado e sem tempo.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 9 1 * *"   # dia 1 de cada mes, 09:00 UTC
+  workflow_dispatch:       # permite rodar na mao pelo site do GitHub
+
+jobs:
+  testa:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # a versao de baixo e a que gerou a base publicada;
+        # a de cima avisa com antecedencia o que vai quebrar
+        python: ["3.13", "3.14"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas numpy pyarrow openpyxl xlrd
+
+      - name: versoes em uso
+        run: pip list | grep -Ei "pandas|numpy|pyarrow|openpyxl|xlrd"
+
+      - name: rodar o pipeline sobre os arquivos sinteticos
+        run: python codigo/_teste/testa_pipeline.py
+
+      - name: conferir que os crosswalks continuam legiveis
+        run: |
+          python - <<'EOF'
+          import csv, sys
+          from pathlib import Path
+          erros = []
+          for p in sorted(Path("crosswalk").glob("*.csv")):
+              with open(p, encoding="utf-8") as f:
+                  linhas = list(csv.reader(f))
+              larguras = {len(l) for l in linhas if l}
+              if len(larguras) > 1:
+                  erros.append(f"{p}: numero de campos inconsistente {larguras}")
+              else:
+                  print(f"ok  {p}  ({len(linhas)-1} linhas)")
+          man = Path("dados/00_brutos/MANIFESTO.csv")
+          if man.exists():
+              with open(man, encoding="utf-8") as f:
+                  larguras = {len(l) for l in csv.reader(f) if l}
+              if len(larguras) > 1:
+                  erros.append(f"{man}: numero de campos inconsistente {larguras}")
+              else:
+                  print(f"ok  {man}")
+          if erros:
+              print("\n".join(erros), file=sys.stderr)
+              sys.exit(1)
+          EOF

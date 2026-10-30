@@ -1,0 +1,216 @@
+{
+  "profile": "tabular-data-package",
+  "name": "base-fatores-transporte-br",
+  "title": "Base nacional de fatores operacionais e ambientais do transporte rodoviário de cargas (Brasil)",
+  "description": "Fatores por classe canônica de veículo de carga no Brasil, integrando SENATRAN (frota e eixos), ANP (vendas de diesel) e MMA/INEAVAR (quilometragem, consumo e emissões). A v0.1 cobre frota, km/ano, L/km e emissões por km. Fator de carga e percurso vazio não estão incluídos: as colunas por tonelada-quilômetro usam a capacidade máxima e são piso teórico, não fator de emissão.",
+  "version": "0.1.0",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Luiz Eduardo Simão",
+      "role": "author",
+      "organization": "Universidade do Vale do Itajaí (UNIVALI), PMPGIL"
+    }
+  ],
+  "keywords": [
+    "transporte rodoviário de cargas",
+    "emissões de GEE",
+    "fatores de emissão",
+    "frota de veículos",
+    "logística sustentável",
+    "ISO 14083",
+    "Brasil"
+  ],
+  "sources": [
+    {
+      "title": "SENATRAN - Frota de veículos",
+      "path": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran"
+    },
+    {
+      "title": "ANP - Vendas de derivados de petróleo e biocombustíveis",
+      "path": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/vendas-de-derivados-de-petroleo-e-biocombustiveis"
+    },
+    {
+      "title": "MMA - Inventário Nacional de Emissões Atmosféricas por Veículos Automotores Rodoviários",
+      "path": "https://dados.mma.gov.br/dataset/emissoes-atmosfericas-veiculos-automotores"
+    }
+  ],
+  "resources": [
+    {
+      "name": "fatores-por-classe",
+      "path": "fatores_por_classe_2024.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "ano_ref",
+            "type": "integer",
+            "description": "Ano de referência das intensidades (INEAVAR)"
+          },
+          {
+            "name": "ano_frota",
+            "type": "integer",
+            "description": "Ano de referência da frota (SENATRAN)"
+          },
+          {
+            "name": "uf",
+            "type": "string",
+            "description": "Âmbito geográfico; BR = nacional"
+          },
+          {
+            "name": "id_classe",
+            "type": "string",
+            "description": "Chave da classe canônica"
+          },
+          {
+            "name": "classe_nome",
+            "type": "string",
+            "description": "Nome da classe por extenso"
+          },
+          {
+            "name": "ordem",
+            "type": "integer",
+            "description": "Ordem de apresentação, do mais leve ao mais pesado"
+          },
+          {
+            "name": "eixos",
+            "type": "integer",
+            "description": "Eixos do conjunto completo",
+            "unit": "eixos"
+          },
+          {
+            "name": "pbt_cmt_t",
+            "type": "number",
+            "description": "PBT (rígidos) ou CMT (articulados) de referência",
+            "unit": "t"
+          },
+          {
+            "name": "carga_util_t",
+            "type": "number",
+            "description": "Capacidade de carga de referência; valor de especialista, marcado PENDENTE",
+            "unit": "t"
+          },
+          {
+            "name": "frota",
+            "type": "number",
+            "description": "Frota REGISTRADA da classe (não circulante)",
+            "unit": "veículos"
+          },
+          {
+            "name": "frota_metodo",
+            "type": "string",
+            "description": "eixos_senatran = contado; modelado = estimado pelo acoplamento"
+          },
+          {
+            "name": "km_ano_veic",
+            "type": "number",
+            "description": "Quilometragem anual por veículo",
+            "unit": "km/ano"
+          },
+          {
+            "name": "l_por_km",
+            "type": "number",
+            "description": "Consumo específico",
+            "unit": "L/km"
+          },
+          {
+            "name": "intensidade_metodo",
+            "type": "string",
+            "description": "herdado_categoria_ineavar: o L/km vem da categoria de emissão, não da classe"
+          },
+          {
+            "name": "categoria_ineavar",
+            "type": "string",
+            "description": "Categoria do inventário que originou a intensidade"
+          },
+          {
+            "name": "fracao_biogenica",
+            "type": "number",
+            "description": "Parcela renovável do combustível (biodiesel misturado)",
+            "unit": "fração"
+          },
+          {
+            "name": "gCO2e_por_km",
+            "type": "number",
+            "description": "Emissão de CO2-equivalente por quilômetro",
+            "unit": "g/km"
+          },
+          {
+            "name": "gCO2e_por_tkm_capacidade",
+            "type": "number",
+            "description": "NÃO É FATOR DE EMISSÃO. Ver DICIONARIO.md",
+            "unit": "g/tkm"
+          },
+          {
+            "name": "gCO2_fossil_por_km",
+            "type": "number",
+            "description": "Emissão de CO2 fóssil por quilômetro",
+            "unit": "g/km"
+          },
+          {
+            "name": "gCO2_fossil_por_tkm_capacidade",
+            "type": "number",
+            "description": "NÃO É FATOR DE EMISSÃO. Ver DICIONARIO.md",
+            "unit": "g/tkm"
+          },
+          {
+            "name": "gCH4_por_km",
+            "type": "number",
+            "description": "Emissão de CH4 por quilômetro",
+            "unit": "g/km"
+          },
+          {
+            "name": "gCH4_por_tkm_capacidade",
+            "type": "number",
+            "description": "NÃO É FATOR DE EMISSÃO. Ver DICIONARIO.md",
+            "unit": "g/tkm"
+          },
+          {
+            "name": "gN2O_por_km",
+            "type": "number",
+            "description": "Emissão de N2O por quilômetro",
+            "unit": "g/km"
+          },
+          {
+            "name": "gN2O_por_tkm_capacidade",
+            "type": "number",
+            "description": "NÃO É FATOR DE EMISSÃO. Ver DICIONARIO.md",
+            "unit": "g/tkm"
+          },
+          {
+            "name": "l_por_tkm_capacidade",
+            "type": "number",
+            "description": "NÃO É FATOR DE EMISSÃO. Consumo dividido pela carga útil MÁXIMA; o valor efetivo é maior",
+            "unit": "L/tkm"
+          },
+          {
+            "name": "frota_p05",
+            "type": "number",
+            "description": "Percentil 5 da frota modelada",
+            "unit": "veículos"
+          },
+          {
+            "name": "frota_p95",
+            "type": "number",
+            "description": "Percentil 95 da frota modelada",
+            "unit": "veículos"
+          }
+        ],
+        "primaryKey": [
+          "ano_ref",
+          "uf",
+          "id_classe"
+        ]
+      }
+    }
+  ]
+}

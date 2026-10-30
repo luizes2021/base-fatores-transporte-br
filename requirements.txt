@@ -1,0 +1,22 @@
+# Dependencias do pipeline, para instalar com pip:
+#   python -m venv .venv
+#   .venv\Scripts\activate        (Windows)
+#   source .venv/bin/activate     (Mac/Linux)
+#   pip install -r requirements.txt
+#
+# Alternativa ao environment.yml (conda). Use um ou outro, nao os dois.
+#
+# Para publicar a versao exata que gerou a base (vai no Zenodo com o DOI):
+#   pip freeze > requirements.lock.txt
+
+pandas>=2.0
+numpy>=1.24          # amostragem do modelo de acoplamento
+pyarrow>=14          # escreve os Parquet; sem ele os scripts falham no fim
+openpyxl>=3.1        # le os .xlsx
+xlrd>=2.0            # le os .xls — a maioria dos meses do SENATRAN
+
+# A partir daqui e opcional nesta fase do projeto:
+duckdb>=0.10         # SQL sobre Parquet, sem servidor
+pdfplumber>=0.11     # tabelas de CETESB, Sindipecas e CNT (fontes em PDF)
+jupyterlab
+matplotlib

@@ -1,0 +1,5 @@
+id_classe,classe_nome,eixos_total,eixos_cavalo,semis_2_eixos,semis_3_eixos,cmt_ref_t,share_min,share_max,nota
+CARRETA5,Carreta 5 eixos,5,3,1,0,41.5,0.10,0.60,cavalo 6x2/6x4 + semirreboque de 2 eixos
+CARRETA6,Carreta 6 eixos / vanderleia,6,3,0,1,48.5,0.10,0.60,cavalo 6x2/6x4 + semirreboque de 3 eixos
+BITREM,Bitrem 7 eixos,7,3,2,0,57.0,0.02,0.35,cavalo + dois semirreboques de 2 eixos
+RODOTREM,Rodotrem 9 eixos,9,3,0,2,74.0,0.005,0.20,cavalo + dois semirreboques de 3 eixos

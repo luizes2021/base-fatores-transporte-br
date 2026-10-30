@@ -1,0 +1,16 @@
+categoria_ineavar,id_classe,classe_nome,tipo_mapeamento,parcela,status,nota
+CAMINHOES SEMILEVES,VUC,VUC / leve,DIRETO,1.0,OK,"confirmado no arquivo real (ano-base 2024)"
+CAMINHOES LEVES,VUC,VUC / leve,DIRETO,1.0,OK,"confirmado; agregar com SEMILEVES na classe VUC"
+CAMINHOES MEDIOS,TOCO,Toco,DIRETO,1.0,OK,confirmado
+CAMINHOES SEMIPESADOS,TRUCK,Truck,PARCELA,,PENDENTE,"semipesado cobre truck (3 eixos) e parte do bitruck (4) — parcela vem da distribuicao de eixos do SENATRAN"
+CAMINHOES SEMIPESADOS,BITRUCK,Bitruck,PARCELA,,PENDENTE,idem
+CAMINHOES PESADOS,BITRUCK,Bitruck,PARCELA,,PENDENTE,"pesado cobre bitruck e TODAS as articuladas — e a categoria que mais precisa ser desagregada"
+CAMINHOES PESADOS,CARRETA5,Carreta 5 eixos,PARCELA,,PENDENTE,idem
+CAMINHOES PESADOS,CARRETA6,Carreta 6 eixos / vanderleia,PARCELA,,PENDENTE,idem
+CAMINHOES PESADOS,BITREM,Bitrem 7 eixos,PARCELA,,PENDENTE,idem
+CAMINHOES PESADOS,RODOTREM,Rodotrem 9 eixos,PARCELA,,PENDENTE,idem
+ONIBUS URBANOS,__NAO_CARGA,Onibus urbano,FORA_DO_ESCOPO,,OK,"nao e carga; fica na base para a conta de alocacao do diesel"
+ONIBUS RODOVIARIOS,__NAO_CARGA,Onibus rodoviario,FORA_DO_ESCOPO,,OK,idem
+MICRO ONIBUS,__NAO_CARGA,Micro-onibus,FORA_DO_ESCOPO,,OK,idem
+COMERCIAIS LEVES,__NAO_CARGA,Comercial leve,FORA_DO_ESCOPO,,OK,"carga urbana leve; fora das classes canonicas da v0.1"
+AUTOMOVEIS,__NAO_CARGA,Automovel,FORA_DO_ESCOPO,,OK,idem

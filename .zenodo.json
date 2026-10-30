@@ -1,0 +1,28 @@
+{
+  "title": "Base nacional de fatores operacionais e ambientais do transporte rodoviário de cargas (Brasil)",
+  "description": "<p>Base de fatores por categoria de ve&iacute;culo de carga para o Brasil, constru&iacute;da por integra&ccedil;&atilde;o de fontes p&uacute;blicas (SENATRAN, ANP, ANTT) com incerteza quantificada e calibra&ccedil;&atilde;o contra o total de diesel comercializado.</p><p>A v0.1 cobre o <strong>m&oacute;dulo de frota</strong>: composi&ccedil;&atilde;o da frota rodovi&aacute;ria de carga por classe can&ocirc;nica, desagrega&ccedil;&atilde;o por n&uacute;mero de eixos e modelo de acoplamento para conjuntos articulados (carreta, bitrem, rodotrem), que o registro veicular n&atilde;o cont&eacute;m diretamente.</p><p>Todo par&acirc;metro estimado &eacute; publicado como distribui&ccedil;&atilde;o (p05/p50/p95), n&atilde;o como ponto. O c&oacute;digo, as tabelas de correspond&ecirc;ncia e o manifesto das fontes (URL, data de acesso e hash SHA-256 de cada arquivo) acompanham os dados.</p>",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "por",
+  "creators": [
+    {
+      "name": "Simão, Luiz Eduardo",
+      "affiliation": "Universidade do Vale do Itajaí (UNIVALI), PMPGIL",
+      "orcid": "0000-0002-6526-9348"
+    }
+  ],
+  "keywords": [
+    "transporte rodoviário de cargas",
+    "emissões de GEE",
+    "fatores de emissão",
+    "frota de veículos",
+    "logística sustentável",
+    "ISO 14083",
+    "Brasil",
+    "road freight transport",
+    "greenhouse gas emissions",
+    "emission factors"
+  ],
+  "notes": "Construída a partir de dados públicos de SENATRAN, ANP e ANTT. O manifesto em dados/00_brutos/MANIFESTO.csv registra a URL, a data de acesso e o hash SHA-256 de cada arquivo de origem, permitindo reproduzir a extração a partir dos mesmos insumos."
+}
