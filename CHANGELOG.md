@@ -10,8 +10,11 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [0.1.0] — 2026-10-30
 
-Primeira versão publicável. O DOI é gerado pelo Zenodo no release do GitHub;
-preencha-o aqui e em `CITATION.cff` depois.
+Primeira versão publicável.
+
+**DOI de conceito:** [10.5281/zenodo.23817989](https://doi.org/10.5281/zenodo.23817989) — aponta sempre para a versão mais
+recente. O DOI desta versão especificamente está na página do registro no
+Zenodo, e é esse que deve ir num artigo que usou estes números.
 
 **Produto:** `dados/30_publicados/fatores_por_classe_2024.csv` — oito classes
 canônicas, âmbito nacional, com dicionário de dados e `datapackage.json`.

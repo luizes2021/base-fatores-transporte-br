@@ -1,11 +1,12 @@
 # Como citar esta base. O GitHub le este arquivo e mostra um botao "Cite this
 # repository"; gerenciadores de referencia o importam direto.
 #
-# DEPOIS DO PRIMEIRO RELEASE, preencha o DOI em 'identifiers' (o Zenodo o
-# gera automaticamente) e descomente aquele bloco.
-#
 # Opcionais: 'email' para contato publico, e co-autores — a ordem aqui e a
 # ordem na citacao.
+#
+# O DOI abaixo e o de CONCEITO: aponta sempre para a versao mais recente.
+# Cada versao tem um DOI proprio, visivel na pagina do registro no Zenodo;
+# e esse que vai num artigo que usou numeros especificos.
 cff-version: 1.2.0
 message: "Se usar esta base, cite-a conforme abaixo."
 type: dataset
@@ -34,7 +35,7 @@ license: CC-BY-4.0
 version: "0.1.0"
 date-released: "2026-10-30"
 repository-code: "https://github.com/luizes2021/base-fatores-transporte-br"
-# identifiers:
-#   - type: doi
-#     value: "10.5281/zenodo.XXXXXXX"
-#     description: "DOI de conceito — sempre aponta para a versão mais recente"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23817989"
+    description: "DOI de conceito — sempre aponta para a versão mais recente"
